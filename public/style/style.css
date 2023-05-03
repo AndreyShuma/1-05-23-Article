@@ -1,0 +1,53 @@
+body, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+}
+.two {
+    font-size: 14px;
+}
+.two:hover {
+    color: blue;
+}
+.three:hover {
+    color: yellowgreen;
+}
+/* .enter{
+    text-align: center;
+} */
+
+input {
+    display: block;
+    margin: 10px auto;
+}
+
+input[type="text"] {
+    width: 250px;
+}
+
+input[type="button"]:hover {
+    color: #fff;
+    background-color: rgb(25, 168, 25);
+    border: 2px solid black;
+}
+label {
+    color: crimson;
+    font-weight: bolder;
+}
+/* .texthidden:not() {
+    color: lightseagreen;
+} */
+/* .active {
+    color: rgb(40, 218, 17);
+} */
+.down:not(.active) {
+    display: none;
+}
+/* .up:not(.active) {
+    display: none;
+} */
