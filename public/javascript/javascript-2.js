@@ -6,7 +6,7 @@ const resultBTN = document.querySelector('input[type="submit"]');
 // складємо функцію яка відобразить дані статтей з серверу
 const render = async () => {
     // отримуємо дані з серверу
-    const result = await axios('main2/name');
+    const result = await axios.get('main2/name');
     //отримуємо результат даних від серверу по роуту /name
     console.log('result', result.data);
     const arrMap = result.data.map( (item) => {
@@ -55,6 +55,9 @@ arctical.addEventListener('click', (ev) => {
     let a = ev.target;
     // Отримуємо масив елементів з вмістом статті
     const nodeArticle =Array.from(arctical.querySelectorAll('.down')) ;
+
+    // if(ev.target.nextElementSibling.className == 'down active') {a.nextElementSibling.classList.remove('active')}
+    // console.log(ev.target.nextElementSibling.className);
     //Звіряємо чи клік відбувся на необхіднії заголовці статті
     if(a.parentNode.classList.contains('article-pearent')) {
         // console.log(a.nextElementSibling);
@@ -67,6 +70,8 @@ arctical.addEventListener('click', (ev) => {
                 }
             // добавляємо класс active для тексту статті, active стилізуємо в CSS і він відповідно з'являється на екрані
             a.nextElementSibling.classList.add('active');
+ 
+            
         });
     }
 });
