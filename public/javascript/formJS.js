@@ -1,3 +1,32 @@
+// const myForm = document.querySelector('#myForm');
+const formSend = document.querySelector('form');
+
+// console.log('myForm >>>>', myForm);
+// console.log('formSend >>>>', formSend);
+
+
+formSend.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const formData = new FormData(ev.target);
+    // console.log('formData >>>>>', formData);
+    const name = formData.get('nameInput');
+    const number = formData.get('number');
+    const car = formData.get('car');
+    const color = formData.get('color');
+
+    console.log('nameInput >>>>>>', name);
+    console.log('number >>>>>>', number, typeof number);
+    console.log('car >>>>>>', car);
+    console.log('color >>>>>>', color);
+
+    const start = async () => {
+        const startData = await axios.post('/form/test', { name : name, number :  number, car : car, color : color});
+        console.log('startData>>>>');
+    };
+    start();
+
+});
+
 
 const runner = async () => {
     const data = await axios.post('/form/formtest', {

@@ -44,12 +44,23 @@ router.get('/', (req, res) => {
 router.post('/formtest', (req, res) => {
     // console.log('req.query >>>>>>',  req.query);
     const dataFront = req.body;
-    console.log('dataFront>>>>>>',  dataFront);
+    // console.log('dataFront>>>>>>',  dataFront);
 
     const valid = validate(dataFront);
     // console.log('validate >>>>>', validate);
     console.log('valid >>>>>', valid);
     res.json({valid: validate.errors});
+});
+
+router.post('/test', (req, res) => {
+
+    const dataFrontTest = req.body;
+    console.log('dataFrontTest>>>>>>',  dataFrontTest);
+
+    // const valid = validate(dataFront);
+    // console.log('validate >>>>>', validate);
+    // console.log('valid >>>>>', valid);
+    // res.json({valid: validate.errors});
 })
 
 module.exports = router;
